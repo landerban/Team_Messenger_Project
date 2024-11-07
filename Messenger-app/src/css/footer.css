@@ -4,6 +4,7 @@
     background-color: #9f6161;
   }
   
+  /* Dark Mode for Footer */
   .footer.dark {
     background-color: #333; /* Dark mode background color */
     color: #ddd; /* Adjust text color if needed */

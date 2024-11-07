@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const OverlayAnimation = (props) => {
+const OverlayAnimation = ({ isAnimating, isDark }) => {
   return (
     <AnimatePresence>
-      {props.isAnimating && (
+      {isAnimating && (
         <motion.div
           className="overlay"
           initial={{
@@ -27,7 +27,7 @@ const OverlayAnimation = (props) => {
           style={{
             position: 'fixed',
             borderRadius: '50%',
-            backgroundColor: props.isDark ? '#1a1a1a' : "#9f6161",
+            backgroundColor: isDark ? '#1a1a1a' : "#9f6161",
             width: 40,
             height: 40,
             zIndex: 2,
