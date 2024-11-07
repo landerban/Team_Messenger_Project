@@ -1,5 +1,31 @@
 # Messenger
 
+Instructions for Frontend
+
+Install node from the website
+
+> https://nodejs.org/en
+
+Check the node version
+
+> node -v
+
+Locate the file and go into it
+
+> cd C:\correct_path\Messenger-app
+
+Install the necessary dependencie
+
+> npm install
+
+Run the dev mode server
+
+> npm run dev
+
+Click on the link
+
+Instructions for Backend
+
 imported
 
 - Django
