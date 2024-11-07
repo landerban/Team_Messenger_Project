@@ -2,13 +2,12 @@ import React from 'react';
 import '../css/footer.css'; // Import the CSS file for styling
 
 const Footer = (props) => {
-    
   return (
-    <footer className={`${props.isDark.dark ? 'dark' : ''} footer text-light py-4 `}>
+    <footer className={`${props.isDark ? 'footer dark' : 'footer'} text-light py-4`}>
       <div className="container">
         <div className="row">
           <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <p className="mb-0">&copy; {new Date().getFullYear()} Alexader The Great. All Rights Reserved.</p>
+            <p className="mb-0">&copy; {new Date().getFullYear()} Alexander The Great. All Rights Reserved.</p>
           </div>
           <div className="col-md-6 text-center text-md-end">
             <ul className="list-unstyled footer-links d-flex justify-content-center justify-content-md-end mb-0">

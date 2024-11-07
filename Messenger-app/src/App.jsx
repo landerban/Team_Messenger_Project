@@ -1,27 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import NavBar from './components/NavBar'
-import Register from './components/Register'
+import { useState } from 'react';
+import NavBar from './components/NavBar';
+import Register from './components/Register';
+import Footer from './components/Footer';
 
 function App() {
-  const [isDark,setIsDark] = useState(false)
-  const [isEng, setIsEng] = useState(true)
+  const [isDark, setIsDark] = useState({
+    dark: true,
+    animating: false,
+  });
+  const [isEng, setIsEng] = useState(true);
 
-  function toggleDark(){
-    setIsDark( old => !old)
+  function toggleDark() {
+    setIsDark((old) => ({
+      ...old,
+      animating: true, // Start animation
+    }));
+
+    setTimeout(() => {
+      setIsDark((old) => ({
+        dark: !old.dark, // Toggle dark mode
+        animating: false, // Stop animation
+      }));
+    }, 500); // Match the CSS animation duration
   }
 
-  function toggleLan(){
-    setIsEng( old => !old)
+  function toggleLan() {
+    setIsEng((old) => !old);
   }
+
   return (
     <>
-        <NavBar toggleLan={toggleLan} toggleDark={toggleDark} isDark={isDark} isEng={isEng}/>
-        <Register isDark={isDark} isEng={isEng}/>
+      <NavBar 
+        toggleLan={toggleLan} 
+        toggleDark={toggleDark} 
+        isDark={isDark.dark} 
+        isAnimating={isDark.animating} 
+        isEng={isEng} 
+      />
+      <Register isDark={isDark.dark} isAnimating={isDark.animating} isEng={isEng} />
+      <Footer isDark={isDark.dark} isEng={isEng} /> 
     </>
-
-  )
+  );
 }
 
-export default App
+export default App;
