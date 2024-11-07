@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!hei3ek@24=5#js$5hn9%@eqi%uld4)i+r0obo^!4zijgr^ao9'
+SECRET_KEY = 'django-insecure-4l-xsra0kw9d^(i7=s+wp&fe621u=m+&&f@h6g1pm(x52$efms'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'customuser'
     'channels',
     'chat',
 ]
@@ -51,12 +52,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTH_USER_MODEL='customuser.CustomUser'
+
 ROOT_URLCONF = 'messenger.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,9 +119,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = 'static/'
 
+MEDIA_URL='media/'
+
+MEDIA_ROOT=BASE_DIR / 'media/'
+STATIC_ROOT=BASE_DIR / 'assets'
+
+STATICFILES_DIRS=[
+    BASE_DIR / 'static/',
+
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
