@@ -30,17 +30,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+# All made Apps in here
+CUSTOM_APPS = [
+    'customuser',
+    'channels',
+    'chat',
+]
+
+# Only system apps in here
+SYSTEM_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'customuser'
-    'channels',
-    'chat',
 ]
+
+INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL='customuser.CustomUser'
+AUTH_USER_MODEL = 'customuser.CustomUser'
 
 ROOT_URLCONF = 'messenger.urls'
 
@@ -121,12 +128,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 STATIC_URL = 'static/'
 
-MEDIA_URL='media/'
+MEDIA_URL = 'media/'
 
-MEDIA_ROOT=BASE_DIR / 'media/'
-STATIC_ROOT=BASE_DIR / 'assets'
+MEDIA_ROOT = BASE_DIR / 'media/'
+STATIC_ROOT = BASE_DIR / 'assets'
 
-STATICFILES_DIRS=[
+STATICFILES_DIRS = [
     BASE_DIR / 'static/',
 
 ]
