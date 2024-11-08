@@ -36,7 +36,9 @@ CUSTOM_APPS = [
     'customuser',
     'channels',
     'chat',
-    'messenger'
+    'messenger',
+    'corsheaders',
+    'rest_framework',
 ]
 
 # Only system apps in here
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 AUTH_USER_MODEL = 'customuser.CustomUser'
@@ -144,7 +147,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ASGI_APPLICATION = 'chatroom.asgi.application'
+ASGI_APPLICATION = 'messenger.asgi.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
@@ -153,3 +156,6 @@ CHANNEL_LAYERS = {
         },
     },
 }
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
