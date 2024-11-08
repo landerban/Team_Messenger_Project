@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar';
-import Register from './components/Register';
 import Footer from './components/Footer';
+import AppRoutes from './AppRoutes';
+
 
 function App() {
   const [isDark, setIsDark] = useState({
     dark: true,
     animating: false,
   });
+
   const [isEng, setIsEng] = useState(true);
+
+  // Simulate authentication status
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   function toggleDark() {
     setIsDark((old) => ({
@@ -37,7 +42,10 @@ function App() {
         isAnimating={isDark.animating} 
         isEng={isEng} 
       />
-      <Register isDark={isDark.dark} isAnimating={isDark.animating} isEng={isEng} />
+
+      <div>
+        <AppRoutes isDark={isDark.dark} isAuthenticated={isAuthenticated} />
+      </div>
       <Footer isDark={isDark.dark} isEng={isEng} /> 
     </>
   );
