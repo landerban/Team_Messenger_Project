@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 # All made Apps in here
 CUSTOM_APPS = [
     'rest_framework',
-    'daphne',
     'customuser',
     'channels',
     'chat',
@@ -49,6 +48,7 @@ SYSTEM_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
 ]
 
