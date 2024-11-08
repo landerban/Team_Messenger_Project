@@ -33,12 +33,13 @@ ALLOWED_HOSTS = []
 
 # All made Apps in here
 CUSTOM_APPS = [
+    'rest_framework',
+    'daphne',
     'customuser',
     'channels',
     'chat',
     'messenger',
     'corsheaders',
-    'rest_framework',
 ]
 
 # Only system apps in here
@@ -120,9 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-KR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -157,5 +158,5 @@ CHANNEL_LAYERS = {
     },
 }
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    'http://localhost:3000'
 ]
