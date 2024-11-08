@@ -1,15 +1,16 @@
 import React from 'react';
 import '../css/navbar.css';
-import OverlayAnimation from './OverlayAnimation';
+import DarkModeAnimation from './DarkModeAnimation';
 import websiteLogo from '/vite.svg';
+import { Link } from 'react-router-dom';
 
 export default function NavBar({ isDark, isAnimating, toggleDark, toggleLan, isEng }) {
   return (
     <header className={isDark ? 'dark' : ''}>
       <nav className="navbar navbar-expand-lg navbar-dark bg-light-custom px-3">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={websiteLogo} alt="Profile Icon" className="profile-icon" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,17 +25,18 @@ export default function NavBar({ isDark, isAnimating, toggleDark, toggleLan, isE
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Chats</a>
+              <Link className="nav-link" to="/chats">Chats</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About Us</a>
+              <Link className="nav-link" to="/about">About Us</Link>
             </li>
           </ul>
+
           <div className="d-flex align-items-center">
-            <button className="btn btn-outline-light auth-button me-2">Log In</button>
+            <Link to='/register'><button className="btn btn-outline-light auth-button me-2">Log In</button></Link>
 
             {/* Dark Mode Toggle Button */}
             <button
@@ -46,7 +48,7 @@ export default function NavBar({ isDark, isAnimating, toggleDark, toggleLan, isE
             </button>
 
             {/* Overlay Animation */}
-            <OverlayAnimation isAnimating={isAnimating} isDark={isDark} />
+            <DarkModeAnimation isAnimating={isAnimating} isDark={isDark} />
 
             {/* Language Toggle Button */}
             <button
@@ -56,6 +58,7 @@ export default function NavBar({ isDark, isAnimating, toggleDark, toggleLan, isE
               {isEng ? 'Eng' : 'Kor'}
             </button>
           </div>
+
         </div>
       </nav>
     </header>

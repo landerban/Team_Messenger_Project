@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const OverlayAnimation = ({ isAnimating, isDark }) => {
+const DarkModeAnimation = ({ isAnimating, isDark }) => {
   return (
     <AnimatePresence>
       {isAnimating && (
@@ -39,4 +39,4 @@ const OverlayAnimation = ({ isAnimating, isDark }) => {
   );
 };
 
-export default OverlayAnimation;
+export default DarkModeAnimation;
