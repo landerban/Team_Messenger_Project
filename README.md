@@ -34,6 +34,7 @@ imported
 - channels_redis
 - djangorestframework
 - django-cors-headers
+- daphne
 
 run server (init)
 

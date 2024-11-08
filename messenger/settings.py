@@ -141,7 +141,6 @@ STATIC_ROOT = BASE_DIR / 'assets'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static/',
-
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -158,5 +157,5 @@ CHANNEL_LAYERS = {
     },
 }
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:5173'
 ]

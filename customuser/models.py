@@ -12,10 +12,10 @@ class CustomUserManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, user_id=user_id, **extra_fields)
         user.first_name = first_name
-        user.last_name=last_name
+        user.last_name = last_name
         user.set_password(password)
         user.save(using=self._db)
-        user.username=user_id
+        user.username = user_id
         return user
 
     def create_superuser(self, email=None, password=None, user_id=None, first_name=None, last_name=None, **extra_fields):
@@ -25,10 +25,10 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser):
-    email = models.EmailField(unique=True,default='')
+    email = models.EmailField(unique=True, default='')
     user_id = models.CharField(max_length=20, unique=True, default='')
-    first_name = models.CharField(max_length=20,null=True)
-    last_name = models.CharField(max_length=20,null=True)
+    first_name = models.CharField(max_length=20, null=True)
+    last_name = models.CharField(max_length=20, null=True)
     date_joined = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
