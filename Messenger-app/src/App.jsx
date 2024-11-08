@@ -13,7 +13,7 @@ function App() {
   const [isEng, setIsEng] = useState(true);
 
   // Simulate authentication status
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   function toggleDark() {
     setIsDark((old) => ({

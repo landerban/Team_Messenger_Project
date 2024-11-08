@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/navbar.css';
-import OverlayAnimation from './OverlayAnimation';
+import DarkModeAnimation from './DarkModeAnimation';
 import websiteLogo from '/vite.svg';
 import { Link } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ export default function NavBar({ isDark, isAnimating, toggleDark, toggleLan, isE
             </button>
 
             {/* Overlay Animation */}
-            <OverlayAnimation isAnimating={isAnimating} isDark={isDark} />
+            <DarkModeAnimation isAnimating={isAnimating} isDark={isDark} />
 
             {/* Language Toggle Button */}
             <button
