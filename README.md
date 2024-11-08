@@ -29,9 +29,11 @@ Instructions for Backend
 imported
 
 - Django
-- chnnels
+- channels
 - websockets
-- chnnels_redis
+- channels_redis
+- djangorestframework
+- django-cors-headers
 
 run server (init)
 
