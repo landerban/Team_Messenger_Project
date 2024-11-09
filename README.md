@@ -36,6 +36,7 @@ imported
 - django-cors-headers
 - daphne
 
+
 run server (init)
 
 > python manage.py migrate
