@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,9 +33,12 @@ ALLOWED_HOSTS = []
 
 # All made Apps in here
 CUSTOM_APPS = [
+    'rest_framework',
     'customuser',
     'channels',
     'chat',
+    'messenger',
+    'corsheaders',
 ]
 
 # Only system apps in here
@@ -44,6 +48,7 @@ SYSTEM_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
 ]
 
@@ -57,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 AUTH_USER_MODEL = 'customuser.CustomUser'
@@ -115,9 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-KR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -135,14 +141,13 @@ STATIC_ROOT = BASE_DIR / 'assets'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static/',
-
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ASGI_APPLICATION = 'chatroom.asgi.application'
+ASGI_APPLICATION = 'messenger.asgi.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
@@ -151,3 +156,6 @@ CHANNEL_LAYERS = {
         },
     },
 }
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:5173'
+]

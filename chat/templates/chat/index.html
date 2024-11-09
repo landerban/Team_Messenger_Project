@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>간단한 채팅에 입실하기</title>
+  </head>
+  <body>
+    <label>입장할 채팅방 이름:</label>
+    <input id="room-name-input" type="text" size="100" />
+    <input id="room-name-submit" type="button" value="입실" />
+
+    <script>
+      // 채팅방에 들어가는 로직
+      const submit = document.querySelector("#room-name-submit");
+      const input = document.querySelector("#room-name-input");
+
+      input.focus(); // 포커스를 입력란에 설정
+      input.onkeyup = (ev) => {
+        if (ev.keyCode === 13) {
+          // ENTER 키를 누르면 입실 버튼을 누른다
+          submit.click();
+        }
+      };
+
+      submit.onclick = (ev) => {
+        // 입장 버튼이 클릭되면 입력 된 대화방 이름의 페이지 (경로)로 이동
+        console.log(input.value);
+        window.location.pathname = "/chat/" + input.value + "/";
+      };
+    </script>
+  </body>
+</html>

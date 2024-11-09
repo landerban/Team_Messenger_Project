@@ -36,19 +36,6 @@ imported
 - django-cors-headers
 - daphne
 
-Download Python
-
-> [Go to the official Python website.](https://www.python.org/downloads/)
-
-- Run the downloaded installer.
-  > check the box that says "Add Python to PATH"
-
-Check python and pip version
-
-> python --version
-> pip --version
-
-> pip install django channels djangorestframework django-cors-headers channels_redis daphne
 
 run server (init)
 
