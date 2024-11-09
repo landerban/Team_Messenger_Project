@@ -49,6 +49,7 @@ Check python and pip version
 > python --version
 > pip --version
 
+Install packages
 > pip install django channels djangorestframework django-cors-headers channels_redis daphne
 
 run server (init)
